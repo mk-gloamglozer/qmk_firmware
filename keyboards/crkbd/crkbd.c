@@ -49,13 +49,19 @@ static void oled_render_layer_state(void) {
             oled_write_ln_P(PSTR("Default"), false);
             break;
         case 1:
-            oled_write_ln_P(PSTR("Lower"), false);
+            oled_write_ln_P(PSTR("Right Symbol"), false);
             break;
         case 2:
-            oled_write_ln_P(PSTR("Raise"), false);
+            oled_write_ln_P(PSTR("Left Symbol"), false);
             break;
         case 3:
-            oled_write_ln_P(PSTR("Adjust"), false);
+            oled_write_ln_P(PSTR("Modifer"), false);
+            break;
+        case 4:
+            oled_write_ln_P(PSTR("F Keys"), false);
+            break;
+        case 5:
+            oled_write_ln_P(PSTR("Mouse"), false);
             break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);
@@ -148,7 +154,8 @@ bool oled_task_kb(void) {
     if (is_keyboard_master()) {
         oled_render_layer_state();
         oled_render_keylog();
-    } else {
+    }
+    else {
         oled_render_logo();
     }
     return false;

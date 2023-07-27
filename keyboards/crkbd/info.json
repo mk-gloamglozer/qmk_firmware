@@ -12,6 +12,7 @@
         "driver": "WS2812"
     },
     "features": {
+        "capsword": true,
         "bootmagic": true,
         "extrakey": true,
         "lto": true,
